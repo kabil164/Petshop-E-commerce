@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JoynPets Footer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: #0f172a;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .footer {
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: #fff;
+      padding: 40px 20px 20px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+    }
+
+    .footer-column h3,
+    .footer-column h4 {
+      color: #a29bfe;
+      margin-bottom: 15px;
+    }
+
+    .footer-column p {
+      line-height: 1.5;
+      color: #dfe6e9;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #dfe6e9;
+      display: block;
+      margin: 8px 0;
+      transition: color 0.3s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: #81ecec;
+    }
+
+    .social-icons a {
+      color: #dfe6e9;
+      margin-right: 15px;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #a29bfe;
+      transform: scale(1.2);
+    }
+
+    .footer-column input[type="email"] {
+      padding: 10px;
+      width: 100%;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #2d3436;
+      color: #fff;
+      outline: none;
+    }
+
+    .footer-column button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #6c5ce7;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.4s;
+    }
+
+    .footer-column button:hover {
+      background-color: #a29bfe;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #555;
+      margin-top: 30px;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Animated Pet */
+    .pet-walk {
+      position: absolute;
+      bottom: 0;
+      left: -100px;
+      width: 80px;
+      height: auto;
+      animation: movePet 20s linear infinite;
+      z-index: 999;
+    }
+
+    @keyframes movePet {
+      0% {
+        left: -100px;
+        transform: scaleX(1);
+      }
+      50% {
+        left: 100vw;
+        transform: scaleX(1);
+      }
+      51% {
+        transform: scaleX(-1);
+      }
+      100% {
+        left: -100px;
+        transform: scaleX(-1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dog or Cat Image -->
+  <img src="https://cdn.pixabay.com/animation/2022/07/30/22/01/22-01-29-66_512.gif" alt="Pet" class="pet-walk" />
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>JoynPets</h3>
+        <p>Bringing joy to your pets with quality products and love.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Newsletter</h4>
+        <input type="email" id="newsletter" placeholder="Enter your email" />
+        <button onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 JoynPets. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS Script -->
+  <script>
+    function subscribe() {
+      const email = document.getElementById('newsletter').value;
+      if (email.trim()) {
+        alert(`Thank you for subscribing, ${email}!`);
+        document.getElementById('newsletter').value = '';
+      } else {
+        alert("Please enter a valid email.");
+      }
+    }
+  </script>
+
+</body>
+</html>

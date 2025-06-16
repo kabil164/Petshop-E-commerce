@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Shop Footer with Roaming Pet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            overflow-x: hidden;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+        }
+
+        .main-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        /* Roaming Pet */
+        .roaming-pet {
+            position: fixed;
+            width: 80px; /* Slightly larger for the GIF */
+            height: 80px;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            pointer-events: none;
+            user-select: none;
+            animation: roam 30s linear infinite;
+        }
+
+        .pet-gif {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+            transform-origin: center bottom;
+            animation: petWalk 0.8s infinite alternate;
+        }
+
+        @keyframes roam {
+            0% {
+                left: -100px;
+                bottom: 20px;
+                transform: scaleX(1);
+            }
+            10% {
+                left: 15%;
+                bottom: 20px;
+            }
+            20% {
+                left: 30%;
+                bottom: 50px;
+            }
+            30% {
+                left: 45%;
+                bottom: 30px;
+                transform: scaleX(1);
+            }
+            35% {
+                transform: scaleX(-1);
+            }
+            40% {
+                left: 30%;
+                bottom: 80px;
+                transform: scaleX(-1);
+            }
+            50% {
+                left: 15%;
+                bottom: 60px;
+                transform: scaleX(-1);
+            }
+            60% {
+                left: 5%;
+                bottom: 100px;
+                transform: scaleX(-1);
+            }
+            70% {
+                left: 20%;
+                bottom: 120px;
+                transform: scaleX(-1);
+            }
+            80% {
+                left: 40%;
+                bottom: 100px;
+                transform: scaleX(-1);
+            }
+            85% {
+                transform: scaleX(1);
+            }
+            90% {
+                left: 60%;
+                bottom: 80px;
+                transform: scaleX(1);
+            }
+            100% {
+                left: calc(100% + 100px);
+                bottom: 20px;
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes petWalk {
+            0% {
+                transform: translateY(0) rotate(-5deg);
+            }
+            100% {
+                transform: translateY(-5px) rotate(5deg);
+            }
+        }
+
+        /* Professional Footer */
+        .professional-footer {
+            background: #1a1a1a;
+            color: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle animated background */
+        .footer-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Decorative line */
+        .footer-line {
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+            background-size: 200% 100%;
+            animation: lineMove 3s ease-in-out infinite;
+        }
+
+        @keyframes lineMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 40px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* Company section */
+        .footer-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .footer-section:nth-child(1) { animation-delay: 0.1s; }
+        .footer-section:nth-child(2) { animation-delay: 0.2s; }
+        .footer-section:nth-child(3) { animation-delay: 0.3s; }
+        .footer-section:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .company-info h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .company-info p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #b0b0b0;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.5s ease;
+        }
+
+        .footer-section:hover h4::after {
+            width: 100%;
+        }
+
+        /* Links */
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .footer-links a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+            transform: translateX(5px);
+        }
+
+        .footer-links a:hover::before {
+            width: 100%;
+        }
+
+        /* Contact info */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-item i {
+            width: 20px;
+            margin-right: 15px;
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+
+        .contact-item span {
+            color: #b0b0b0;
+        }
+
+        /* Social media */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #2d2d2d;
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-link:hover {
+            background: #667eea;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Newsletter */
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #3d3d3d;
+            border-radius: 6px;
+            background: #2d2d2d;
+            color: #fff;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+        }
+
+        .newsletter-btn {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .newsletter-btn:hover::before {
+            left: 100%;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Footer bottom */
+        .footer-bottom {
+            border-top: 1px solid #3d3d3d;
+            padding: 25px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .copyright {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #667eea;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .contact-item {
+                justify-content: center;
+            }
+
+            .roaming-pet {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* Scroll animation */
+        .footer-section {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: none;
+        }
+
+        .footer-section.animate {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-50px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div>
+            <h1>Your Business Content</h1>
+            <p>Professional footer below</p>
+        </div>
+    </div>
+
+    <!-- Roaming Pet (Cat GIF) -->
+    <div class="roaming-pet">
+        <img src="https://cdn.pixabay.com/animation/2022/07/30/22/01/22-01-29-66_512.gif" alt="Roaming cat" class="pet-gif">
+    </div>
+
+    <footer class="professional-footer">
+        <div class="footer-line"></div>
+        <div class="footer-bg"></div>
+        
+        <div class="footer-content">
+            <div class="footer-main">
+                <!-- Company Info -->
+                <div class="footer-section company-info">
+                    <h3>Your Shop</h3>
+                    <p>We are committed to providing exceptional products and services to our valued customers. Quality, reliability, and customer satisfaction are at the heart of everything we do.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#support">Support Center</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#track">Track Order</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Newsletter -->
+                <div class="footer-section">
+                    <h4>Get In Touch</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Business Street, City, State 12345</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@yourshop.com</span>
+                    </div>
+                    
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    © 2025 Your Shop. All rights reserved.
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#cookies">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate sections on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all footer sections
+            document.querySelectorAll('.footer-section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Newsletter form
+            const newsletterForm = document.getElementById('newsletterForm');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const input = this.querySelector('.newsletter-input');
+                const button = this.querySelector('.newsletter-btn');
+                const email = input.value;
+
+                // Simple validation
+                if (email && email.includes('@')) {
+                    button.textContent = 'Subscribed!';
+                    button.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+                    
+                    setTimeout(() => {
+                        button.textContent = 'Subscribe';
+                        button.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                        input.value = '';
+                    }, 2000);
+                }
+            });
+
+            // Make the pet interactive
+            const pet = document.querySelector('.roaming-pet');
+            pet.style.pointerEvents = 'auto';
+            pet.style.cursor = 'pointer';
+            
+            pet.addEventListener('click', function() {
+                // Reset animation to make it restart
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = 'roam 30s linear infinite';
+                }, 10);
+                
+                // Add a temporary meow effect
+                const meow = document.createElement('div');
+                meow.textContent = 'Meow!';
+                meow.style.position = 'fixed';
+                meow.style.left = `${pet.getBoundingClientRect().left}px`;
+                meow.style.top = `${pet.getBoundingClientRect().top - 30}px`;
+                meow.style.color = '#764ba2';
+                meow.style.fontWeight = 'bold';
+                meow.style.fontSize = '16px';
+                meow.style.pointerEvents = 'none';
+                meow.style.animation = 'fadeUp 1s forwards';
+                document.body.appendChild(meow);
+                
+                setTimeout(() => {
+                    meow.remove();
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
